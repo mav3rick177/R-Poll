@@ -14,18 +14,23 @@ const TOKEN = process.env.TOKEN;
 bot.login(TOKEN);
 
 bot.on('ready', () => {
-  console.info(`Logged in as ${bot.user.tag}!`);
+    bot.user.setPresence({ status: 'online', game: { name: '!help' } });
+    console.info(`Logged in as ${bot.user.tag}!`);
 });
 
 bot.on('message', msg => {
-  const args = msg.content.split(/ +/);
+  const args = msg.content.split(' ');
+  console.log('args : ' + msg.content);
   const command = args.shift().toLowerCase();
   console.info(`Called command: ${command}`);
   
   if (!bot.commands.has(command)) return;
 
   try {
-    bot.commands.get(command).execute(msg, args);
+    if(command === "!poll")
+        bot.commands.get(command).execute(msg, msg.content);
+    else
+        bot.commands.get(command).execute(msg, args);
   } catch (error) {
     console.error(error);
     msg.reply('there was an error trying to execute that command!');

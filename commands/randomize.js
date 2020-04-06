@@ -10,6 +10,7 @@ module.exports = {
             let userList = [];
             for (const [ index, taggedUser ] of msg.mentions.users.entries()) {
                 userList.push(emojiCharacters[counter++]+ ' ' + taggedUser.username);
+                userList.push('\u200B');
             }
             const randomtaggedUser = msg.mentions.users.get([...msg.mentions.users.keys()][Math.floor(Math.random() * msg.mentions.users.size)]);
             let embedsay = new Discord.RichEmbed()
