@@ -27,10 +27,7 @@ bot.on('message', msg => {
   if (!bot.commands.has(command)) return;
 
   try {
-    if(command === "!poll")
-        bot.commands.get(command).execute(msg, msg.content);
-    else
-        bot.commands.get(command).execute(msg, args);
+    bot.commands.get(command).execute(msg, msg.content);
   } catch (error) {
     console.error(error);
     msg.reply('there was an error trying to execute that command!');

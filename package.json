@@ -1,6 +1,6 @@
 {
   "name": "r-poll-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Discord bot that manage server polls",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0"
   }
 }

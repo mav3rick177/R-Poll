@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: '!poll',
-    description: 'Poll!',
+    description: 'Create a poll!',
     execute(msg, args) {
         const regex = /"(.+?)"/g; let pArgs = []; let match;
         while (match = regex.exec(args)) pArgs.push(match[1]);

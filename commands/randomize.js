@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: '!randomize',
-    description: 'Randomize!',
+    description: 'Get a random person from a list!',
     execute(msg, args) {
         if (msg.mentions.users.size) {         
             let counter = 1;
