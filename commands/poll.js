@@ -30,7 +30,7 @@ module.exports = {
                 .addField('Options List', options, true)
                 .setTimestamp();
             msg.channel.send({embed: embedsay}).then(embedMessage => {
-                reactions.forEach(reaction => embedMessage.react(reaction));      
+                reactions.reduce((promise, emoji) => promise.then(() => embedMessage.react(emoji)), Promise.resolve());
             });
         }
     }
