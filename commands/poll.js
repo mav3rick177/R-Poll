@@ -25,8 +25,7 @@ module.exports = {
             let embedsay = new Discord.RichEmbed()
                 .setColor('RANDOM')
                 .setAuthor(msg.author.tag, msg.author.avatarURL)
-                .setTitle('Poll')
-                .setDescription(pArgs[0])
+                .setTitle(pArgs[0])
                 .addField('Options List', options, true)
                 .setTimestamp();
             msg.channel.send({embed: embedsay}).then(embedMessage => {
